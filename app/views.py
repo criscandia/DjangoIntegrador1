@@ -31,6 +31,14 @@ def editar_remera(request, id, template_name='app/editar-remera.html'):
     dato = {'form': form}
     return render(request, template_name, dato)
 
+def eliminar_remera(request, id, template_name='app/eliminar-remera.html'):
+    remera = get_object_or_404(Remeras, pk=id)
+    if request.method == 'POST':
+        remera.delete() #aca esta la papa
+        return redirect('listar_remeras')
+    dato = {'remera': remera}
+    return render(request, template_name, dato)
+
 def listar_remeras(request, template_name='app/listar-remeras.html'):
     remeras_list = Remeras.objects.all()
     dato = {'remeras': remeras_list}

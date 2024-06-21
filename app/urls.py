@@ -7,6 +7,7 @@ urlpatterns = [
     path('nueva-remera/', views.remera, name='nueva_remera'),
     path('listar-remeras/', views.listar_remeras, name='listar_remeras'),
     path('remera/<int:id>/', views.detalles_remera, name='detalles_remera'),
-    path('remera/editar/<int:id>/', views.editar_remera, name='editar_remera')
+    path('remera/editar/<int:id>/', views.editar_remera, name='editar_remera'),
+    path('remera/eliminar/<int:id>/', views.eliminar_remera, name='eliminar_remera')
     
 ]
