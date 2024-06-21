@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nueva Remera</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+</head>
+{% load static %}
+<body>
+    <nav class="nav-wrapper">
+        <div class="container">
+            <a href="{% url 'home' %}" class="brand-logo">
+                <img src="{% static 'img/logo.png' %}" alt="Logo de la tienda">
+            </a>
+        </div>
+    </nav>
+<div class="container">
+    <h1>Nueva remera</h1>
+    <form action="" method="post" class="col s12">
+        {% csrf_token %}
+        <div class="row">
+            {{ form.as_p }}
+        </div>
+        <div class="row">
+            <div class="input-field col s12" style="margin-top: 20px;">
+                <button type="submit" class="waves-effect waves-light btn">Guardar</button>
+            </div>
+        </div>
+    </form>
+    <a href="{% url 'nueva_remera' %}" class="waves-effect waves-light btn">Nueva Remera</a>
+    <a href="{% url 'listar_remeras' %}" class="waves-effect waves-light btn">Listar Remeras</a>
+    <a href="{% url 'home' %}" class="waves-effect waves-light btn">Volver a la página principal</a>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script>document.addEventListener('DOMContentLoaded', function() {
+    M.AutoInit();
+});</script>
+</body>
+</html>

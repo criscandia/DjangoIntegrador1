@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Detalles de la Remera</title>
+    {% load static %}
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<nav class="nav-wrapper teal lighten-2">
+    <div class="container">
+        <a href="#" class="brand-logo"></a>
+        <img src="{% static 'img/logo.png' %}" alt="Logo de la tienda" class="responsive-img"> <!-- Imagen estática y responsiva -->
+        </a>
+    </div>
+</nav>
+<div style="display: flex; justify-content: center; align-items: ;">
+<div class="section">
+        <h3>Detalles de la Remera</h3>
+            <p><strong>Marca:</strong> {{ remera.marca }}</p>
+            <p><strong>Talle:</strong> {{ remera.get_talle_display }}</p> <!-- Asume que usas un campo de elección para 'talle' -->
+            <p><strong>Color:</strong> {{ remera.color }}</p>
+            <p><strong>Lisa:</strong> {{ remera.lisa|yesno:"Sí,No" }}</p> <!-- Convierte booleanos en 'Sí' o 'No' -->
+            <p><strong>Género:</strong> {{ remera.get_genero_display }}</p> <!-- Asume que usas un campo de elección para 'genero' -->
+            <a href="{% url 'home' %}" class="waves-effect waves-light btn">Volver a la página principal</a> <!-- Enlace a la página de inicio estilizado -->  
+
+        </div>
+         
+    </div>
+    
+
+    
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>
